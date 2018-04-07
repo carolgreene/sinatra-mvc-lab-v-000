@@ -11,8 +11,8 @@ class  PigLatinizer
 
   def to_pig_latin(phrase)
     words = phrase.split(" ")
-    words.map! {|word| piglatinize(word)}
-    words.join(" ")
+    words.map! {|word| piglatinize(word)}.join(" ")
+    #words.join(" ")
   end
 
   def piglatinize(word)
@@ -28,7 +28,7 @@ class  PigLatinizer
         elsif index == 0 && vowels.include?(chr.downcase)
           return word + "way"
         end
-        end
       end
     end
   end
+end
