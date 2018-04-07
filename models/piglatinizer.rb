@@ -12,7 +12,6 @@ class  PigLatinizer
   def to_pig_latin(phrase)
     words = phrase.split(" ")
     words.map! {|word| piglatinize(word)}.join(" ")
-    #words.join(" ")
   end
 
   def piglatinize(word)
