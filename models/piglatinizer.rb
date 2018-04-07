@@ -3,12 +3,6 @@ require 'pry'
 class  PigLatinizer
 
 
-  #attr_reader :words
-
-  #def split_phrase(phrase)
-    #new_phrase = phrase.split(" ")
-  #end
-
   def to_pig_latin(phrase)
     words = phrase.split(" ")
     words.map! {|word| piglatinize(word)}.join(" ")
