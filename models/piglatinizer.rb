@@ -12,15 +12,12 @@ class  PigLatinizer
     if word.include?(" ")
       to_pig_latin(word)
     else
-      vowels = %w{a e i o u}
-      word.each_char do |chr|
-        index = word.index(chr)
-        if index != 0 && vowels.include?(chr.downcase)
-          consonants = word.slice!(0..index-1)
-          return word + consonants + "ay"
-        elsif index == 0 && vowels.include?(chr.downcase)
-          return word + "way"
-        end
+      first_split = word.split(/([aeiouAEIOU].*)/)[0]
+      second_split = word.split(/([aeiouAEIOU].*)/)[1]
+      if first_split == ""
+        second_split + "way"
+      else
+        second_split + first_split + "ay"
       end
     end
   end
